@@ -1,0 +1,6 @@
+admission_type_group,encounters,avg_los_days,readmit_lt30_rate
+Urgent,18480,4.61,0.1135
+Elective,18869,4.32,0.1049
+Emergency,53990,4.38,0.1183
+Unknown,10406,4.24,0.1087
+Trauma,21,4.86,0.0

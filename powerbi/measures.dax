@@ -1,0 +1,54 @@
+// DAX measures for the Diabetes Readmission report.
+// Create each one in Power BI Desktop: Modeling > New measure, on the fact_encounter table.
+// Readmission rates use eligible encounters only (is_eligible = 1): patients who died
+// or went to hospice cannot be readmitted. This matches sql/04_marts.sql.
+
+Encounters = COUNTROWS ( fact_encounter )
+
+Patients = DISTINCTCOUNT ( fact_encounter[patient_nbr] )
+
+Eligible Encounters =
+CALCULATE ( COUNTROWS ( fact_encounter ), fact_encounter[is_eligible] = 1 )
+
+Readmitted <30 =
+CALCULATE ( SUM ( fact_encounter[readmit_lt30] ), fact_encounter[is_eligible] = 1 )
+
+30-Day Readmission Rate =
+DIVIDE ( [Readmitted <30], [Eligible Encounters] )
+
+Readmission Rate >30 =
+DIVIDE (
+    CALCULATE ( SUM ( fact_encounter[readmit_gt30] ), fact_encounter[is_eligible] = 1 ),
+    [Eligible Encounters]
+)
+
+Any Readmission Rate =
+DIVIDE (
+    CALCULATE ( SUM ( fact_encounter[readmit_any] ), fact_encounter[is_eligible] = 1 ),
+    [Eligible Encounters]
+)
+
+Avg Length of Stay = AVERAGE ( fact_encounter[los_days] )
+
+Median Length of Stay = MEDIAN ( fact_encounter[los_days] )
+
+// Benchmark line: the overall rate, ignoring every slicer and axis on the visual
+30-Day Rate (All Patients) =
+CALCULATE ( [30-Day Readmission Rate], REMOVEFILTERS ( fact_encounter ) )
+
+// Positive = above the overall average, in percentage points
+30-Day Rate vs Average =
+[30-Day Readmission Rate] - [30-Day Rate (All Patients)]
+
+// Hides unreliable cells in the age x diagnosis matrix (same 200-encounter rule as the web dashboard)
+30-Day Rate (n>=200) =
+IF ( [Eligible Encounters] >= 200, [30-Day Readmission Rate] )
+
+Medications per Encounter =
+DIVIDE ( COUNTROWS ( fact_medication ), [Encounters] )
+
+HbA1c Tested Share =
+DIVIDE (
+    CALCULATE ( [Encounters], fact_encounter[a1c_result] <> "Not measured" ),
+    [Encounters]
+)

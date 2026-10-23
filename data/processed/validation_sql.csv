@@ -1,0 +1,19 @@
+check,severity,rows,detail,passed
+Every raw encounter reaches the clean table,error,0,distinct raw encounter_id minus clean rows,True
+Encounter IDs are unique in the raw file,error,0,duplicate encounter_id rows,True
+"Readmission label is one of NO, <30, >30",error,0,unexpected readmitted values,True
+Readmission flags are mutually exclusive,error,0,conflicting flags,True
+Length of stay is between 1 and 14 days,error,0,out-of-range time_in_hospital,True
+Age band is one of the ten published bands,error,0,unparseable age,True
+Utilisation counts are non-negative,error,0,negative counts,True
+Admission type IDs map to the lookup,error,0,admission_type_id missing from IDS_mapping,True
+Discharge IDs map to the lookup,error,0,discharge_disposition_id missing from IDS_mapping,True
+Every medication row belongs to an encounter,error,0,orphan fact_medication rows,True
+Weight is missing,info,98569,weight is dropped from analysis,True
+Payer code is missing,info,40256,kept as NULL,True
+Medical specialty is missing,info,49949,kept as NULL,True
+Race is missing,info,2273,kept as NULL,True
+Gender is Unknown/Invalid,info,3,set to NULL,True
+Primary diagnosis is missing,info,21,grouped as Missing,True
+Discharged to hospice or expired,info,2423,excluded from readmission rates,True
+Repeat encounters for the same patient,info,30248,kept; flag is_first_encounter allows a one-row-per-patient view,True

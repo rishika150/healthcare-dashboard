@@ -1,0 +1,10 @@
+check,severity,passed,detail
+encounter_id is a unique key,error,True,"101,766 unique of 101,766"
+Required columns have no nulls,error,True,0 nulls in 7 columns
+Rates are probabilities,error,True,flags are 0/1
+One first encounter per patient,error,True,"71,518 first encounters, 71,518 patients"
+Row count matches raw CSV,error,True,"SQL 101,766 vs pandas 101,766"
+30-day readmission rate matches,error,True,SQL 0.1139 vs pandas 0.1139
+Average length of stay matches,error,True,SQL 4.40 vs pandas 4.40
+Readmission by age matches,error,True,max difference 0.000050
+ICD-9 grouping matches,error,True,10 groups compared

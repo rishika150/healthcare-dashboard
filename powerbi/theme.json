@@ -1,0 +1,31 @@
+{
+  "name": "Readmission Window",
+  "dataColors": ["#00779E", "#C8304A", "#485C59", "#6E807D", "#9FB3AF", "#CDD7D4"],
+  "background": "#EEF1EF",
+  "foreground": "#142826",
+  "tableAccent": "#00779E",
+  "good": "#00779E",
+  "neutral": "#6E807D",
+  "bad": "#C8304A",
+  "maximum": "#C8304A",
+  "center": "#F3D9DD",
+  "minimum": "#EEF1EF",
+  "textClasses": {
+    "title": { "fontFace": "Segoe UI Semibold", "fontSize": 13, "color": "#142826" },
+    "header": { "fontFace": "Segoe UI Semibold", "fontSize": 12, "color": "#142826" },
+    "label": { "fontFace": "Segoe UI", "fontSize": 10, "color": "#485C59" },
+    "callout": { "fontFace": "Segoe UI Bold", "fontSize": 28, "color": "#142826" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "show": true, "color": { "solid": { "color": "#EEF1EF" } }, "transparency": 0 }],
+        "border": [{ "show": false }],
+        "dropShadow": [{ "show": false }]
+      }
+    },
+    "page": {
+      "*": { "background": [{ "color": { "solid": { "color": "#EEF1EF" } }, "transparency": 0 }] }
+    }
+  }
+}

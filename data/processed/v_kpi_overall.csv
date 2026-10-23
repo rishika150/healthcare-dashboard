@@ -1,0 +1,2 @@
+encounters,patients,eligible_encounters,avg_los_days,readmit_lt30_rate,readmit_gt30_rate,readmit_any_rate
+101766,71518,99343.0,4.4,0.1139,0.3574,0.4713

@@ -1,0 +1,61 @@
+# Building the Power BI report
+
+Power BI Desktop is free on Windows ([Microsoft Store](https://aka.ms/pbidesktopstore)). This guide rebuilds the report from the files in this folder in about 30 minutes. Save the result as `powerbi/diabetes_readmission.pbix` and add your screenshots to `screenshots/powerbi-*.png`.
+
+## 1. Load the data
+
+You have two options. Both give the same model.
+
+**From the CSVs (no database needed).** Run `python run_pipeline.py` once, so `data/processed/` holds `fact_encounter.csv` and `fact_medication.csv`. Then either use **Get data > Text/CSV** on each file, or paste the queries from [`load_tables.pq`](load_tables.pq) after creating a `DataFolder` parameter.
+
+**Straight from MySQL.** Install the free [MySQL Connector/NET](https://dev.mysql.com/downloads/connector/net/), then **Get data > MySQL database**, server `localhost:3306`, database `diabetes_readmission`, and pick `fact_encounter` and `fact_medication`.
+
+## 2. Model
+
+- Relationship: `fact_medication[encounter_id]` many-to-one `fact_encounter[encounter_id]`, single direction.
+- Sort columns: sort `age_band` by `age_order` (select the column, **Column tools > Sort by column**).
+- Hide technical columns from report view: `readmitted_raw`, `diag_1..3`, the `*_id` columns.
+- Add every measure from [`measures.dax`](measures.dax). Format the rate measures as percentage with 1 decimal.
+- **View > Themes > Browse for themes** and pick [`theme.json`](theme.json). Blue means time in hospital; red is kept for 30-day readmission only.
+
+## 3. Pages
+
+### Page 1: Overview
+| Visual | Fields |
+|---|---|
+| 5 cards | `Encounters`, `Patients`, `Avg Length of Stay`, `30-Day Readmission Rate` (red), `Any Readmission Rate` |
+| Column chart | X `los_days`, Y `Encounters`. Title: "How long patients stay" |
+| Clustered bar | Y `discharge_group`, X `30-Day Readmission Rate`, sorted descending; add `30-Day Rate (All Patients)` as an **Analytics > Constant/Average line** |
+| Slicers | `gender`, `race`, `admission_type_group`, `is_first_encounter` |
+
+### Page 2: Age
+| Visual | Fields |
+|---|---|
+| Column chart | X `age_band`, Y `30-Day Readmission Rate`, with an average line |
+| Column chart | X `age_band`, Y `Avg Length of Stay` |
+| Line chart | X `age_band`, Y `Readmission Rate >30` and `30-Day Readmission Rate` |
+
+### Page 3: Diagnosis
+| Visual | Fields |
+|---|---|
+| Bar chart | Y `primary_diag_group`, X `30-Day Readmission Rate`, sorted descending; conditional formatting so the top bar is red |
+| Matrix (heatmap) | Rows `primary_diag_group`, Columns `age_band`, Values `30-Day Rate (n>=200)`; **Conditional formatting > Background color**, gradient from `#EEF1EF` to `#C8304A` |
+| Scatter | Details `primary_diag_group`, X `Avg Length of Stay`, Y `30-Day Readmission Rate`, Size `Encounters` |
+
+### Page 4: Risk drivers
+| Visual | Fields |
+|---|---|
+| Column chart | X `prior_inpatient_band`, Y `30-Day Readmission Rate` |
+| Column chart | X `los_days`, Y `30-Day Readmission Rate` |
+| Bar chart | Y `a1c_result`, X `30-Day Readmission Rate`, tooltip `HbA1c Tested Share` |
+| Bar chart | Y `fact_medication[medication]`, X `Encounters`, Top N 10 |
+
+## 4. Check the numbers
+
+The cards should read: 101,766 encounters, 71,518 patients, 4.4 days, 11.4% within 30 days, 47.1% at any point. These match `data/processed/v_kpi_overall.csv`, which the pipeline has already validated against an independent pandas calculation.
+
+## 5. Sharing for free
+
+- Commit the `.pbix` to the repo (it is about 5 MB with this data) and add page screenshots to `screenshots/`.
+- **Publish to web** needs a Power BI work or school account, so a personal Gmail can't use it. The free public alternative is **Tableau Public**: connect to the same `fact_encounter.csv`, rebuild the four pages, and publish to your Tableau Public profile. Put that link in the README.
+- The repo's web dashboard (GitHub Pages) is always public and needs no account.

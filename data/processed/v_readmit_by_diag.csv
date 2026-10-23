@@ -1,0 +1,11 @@
+primary_diag_group,encounters,avg_los_days,readmit_lt30_rate,readmit_gt30_rate
+Circulatory,30437,4.23,0.1169,0.3647
+Diabetes,8757,4.34,0.131,0.3829
+Digestive,9475,4.36,0.1082,0.3601
+Genitourinary,5117,4.24,0.1104,0.3427
+Injury,6974,4.62,0.124,0.3258
+Missing,21,3.9,0.25,0.2
+Musculoskeletal,4957,3.92,0.0954,0.2979
+Neoplasms,3433,5.36,0.1089,0.2539
+Other,18172,4.76,0.1168,0.3518
+Respiratory,14423,4.23,0.1006,0.3966

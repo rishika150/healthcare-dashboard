@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diabetes Readmissions</title>
+<meta name="description" content="30-day readmission rates and length of stay for 101,766 diabetic patient encounters across 130 US hospitals, 1999–2008.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect x=%221%22 y=%229%22 width=%223%22 height=%226%22 fill=%22%2300779E%22/%3E%3Crect x=%225%22 y=%225%22 width=%223%22 height=%2210%22 fill=%22%2300779E%22/%3E%3Crect x=%229%22 y=%221%22 width=%226%22 height=%2214%22 fill=%22%23C8304A%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the charts</a>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Who comes back within 30&nbsp;days</h1>
+    <p class="lede" id="lede">Readmissions and length of stay for diabetic patient encounters.</p>
+  </div>
+  <div class="wrap">
+    <figure class="timeline" aria-labelledby="timeline-caption">
+      <div id="timeline" class="timeline-plot"></div>
+      <figcaption id="timeline-caption" class="timeline-caption">
+        Each blue bar is the number of stays that began that many days before discharge.
+        The red span is the 30 days after discharge, the window hospitals are judged on.
+      </figcaption>
+    </figure>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap stats" aria-label="Headline numbers">
+    <dl id="stats"></dl>
+  </section>
+
+  <section class="wrap block block--wide" aria-labelledby="h-age">
+    <div class="copy">
+      <h2 id="h-age">Older patients stay longer and return slightly more often</h2>
+      <p id="age-note"></p>
+    </div>
+    <div class="pair">
+      <figure><figcaption>30-day readmission rate by age</figcaption><div id="age-rate" class="chart"></div></figure>
+      <figure><figcaption>Average length of stay by age, days</figcaption><div id="age-los" class="chart"></div></figure>
+    </div>
+  </section>
+
+  <section class="wrap block" aria-labelledby="h-diag">
+    <div class="copy">
+      <h2 id="h-diag">Diabetes as the primary diagnosis carries the highest risk</h2>
+      <p id="diag-note"></p>
+      <div class="seg" role="radiogroup" aria-label="Measure shown by diagnosis">
+        <button type="button" role="radio" aria-checked="true" data-metric="lt30">30-day rate</button>
+        <button type="button" role="radio" aria-checked="false" data-metric="avg_los">Stay length</button>
+        <button type="button" role="radio" aria-checked="false" data-metric="encounters">Volume</button>
+      </div>
+    </div>
+    <figure><figcaption id="diag-caption">30-day readmission rate by primary diagnosis</figcaption><div id="diag" class="chart"></div></figure>
+  </section>
+
+  <section class="wrap block" aria-labelledby="h-heat">
+    <div class="copy">
+      <h2 id="h-heat">Age and diagnosis together</h2>
+      <p>The stronger the red, the more patients returned within 30 days. Cells with fewer than 200 encounters are left empty because their rates swing on a handful of patients.</p>
+      <div class="ramp" id="ramp" aria-hidden="true"></div>
+    </div>
+    <figure><figcaption>30-day readmission rate, age band by primary diagnosis</figcaption><div id="heat" class="chart heat"></div></figure>
+  </section>
+
+  <section class="wrap block block--wide" aria-labelledby="h-prior">
+    <div class="copy">
+      <h2 id="h-prior">A patient's history predicts a return better than anything else</h2>
+      <p id="prior-note"></p>
+    </div>
+    <div class="pair">
+      <figure><figcaption>30-day rate by inpatient stays in the prior year</figcaption><div id="prior" class="chart"></div></figure>
+      <figure><figcaption>30-day rate by where the patient went after discharge</figcaption><div id="discharge" class="chart"></div></figure>
+    </div>
+  </section>
+
+  <section class="wrap block" aria-labelledby="h-los">
+    <div class="copy">
+      <h2 id="h-los">Longer stays, more returns, up to about ten days</h2>
+      <p id="los-note"></p>
+    </div>
+    <figure><figcaption>30-day readmission rate by length of stay, days</figcaption><div id="los" class="chart"></div></figure>
+  </section>
+
+  <section class="wrap findings" aria-labelledby="h-find">
+    <h2 id="h-find">What this means for a discharge team</h2>
+    <ul id="findings"></ul>
+  </section>
+
+  <section class="wrap checks" aria-labelledby="h-checks">
+    <h2 id="h-checks">How the numbers were checked</h2>
+    <p>The raw file was loaded into MySQL, cleaned in SQL, and every headline number was then recomputed from the raw CSV in pandas. The pipeline stops if any check below fails.</p>
+    <div class="table-scroll"><table id="checks"><thead><tr><th scope="col">Check</th><th scope="col">Stage</th><th scope="col" class="num">Rows</th><th scope="col">Result</th></tr></thead><tbody></tbody></table></div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>Data: <a href="https://archive.ics.uci.edu/dataset/296" rel="noopener">Diabetes 130-US Hospitals for Years 1999–2008</a>, UCI Machine Learning Repository (CC BY 4.0), from Strack et al., 2014. Readmission rates exclude the <span id="excluded"></span> encounters that ended in death or hospice. Encounters, not patients, are the unit; a patient admitted three times counts three times.</p>
+  <p><a href="https://github.com/kritika89898/diabetes-readmission-dashboard" rel="noopener">Source code, SQL and Power BI files on GitHub</a></p>
+</footer>
+
+<div id="tip" class="tip" role="status" aria-live="polite" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
