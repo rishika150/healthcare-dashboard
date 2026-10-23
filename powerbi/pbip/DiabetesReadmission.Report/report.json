@@ -1,0 +1,244 @@
+{
+  "config": "{\"version\": \"5.59\", \"themeCollection\": {}, \"activeSectionIndex\": 0, \"linguisticSchemaSyncVersion\": 0, \"objects\": {}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [],
+  "sections": [
+    {
+      "name": "ReportSection1",
+      "displayName": "Overview",
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "ordinal": 0,
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#EEF1EF'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"outspace\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#EEF1EF'\"}}}}}}}]}}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 32,
+          "y": 20,
+          "z": 0,
+          "width": 900,
+          "height": 74,
+          "config": "{\"name\": \"6bcacf5acd6d472485d7\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 32, \"y\": 20, \"z\": 0, \"width\": 900, \"height\": 74}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"Who comes back within 30 days\", \"textStyle\": {\"fontFamily\": \"Segoe UI Semibold\", \"fontSize\": \"22pt\", \"color\": \"#142826\"}}]}, {\"textRuns\": [{\"value\": \"101,766 diabetic patient encounters, 130 US hospitals, 1999-2008. Rates exclude deaths and hospice discharges.\", \"textStyle\": {\"fontFamily\": \"Segoe UI\", \"fontSize\": \"11pt\", \"color\": \"#485C59\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 32,
+          "y": 108,
+          "z": 1000,
+          "width": 230,
+          "height": 110,
+          "config": "{\"name\": \"c6b92a02d37f44f78ebe\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 32, \"y\": 108, \"z\": 1000, \"width\": 230, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_encounter.Encounters\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"Encounters\"}, \"Name\": \"fact_encounter.Encounters\"}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"28D\"}}}, \"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Encounters'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 278,
+          "y": 108,
+          "z": 2000,
+          "width": 230,
+          "height": 110,
+          "config": "{\"name\": \"c02cca3e00c24f20ab50\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 278, \"y\": 108, \"z\": 2000, \"width\": 230, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_encounter.Patients\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"Patients\"}, \"Name\": \"fact_encounter.Patients\"}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"28D\"}}}, \"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Patients'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 524,
+          "y": 108,
+          "z": 3000,
+          "width": 230,
+          "height": 110,
+          "config": "{\"name\": \"225284d961eb48e48095\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 524, \"y\": 108, \"z\": 3000, \"width\": 230, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_encounter.Avg Length of Stay\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"Avg Length of Stay\"}, \"Name\": \"fact_encounter.Avg Length of Stay\"}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"28D\"}}}, \"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Avg Length of Stay'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 770,
+          "y": 108,
+          "z": 4000,
+          "width": 230,
+          "height": 110,
+          "config": "{\"name\": \"b0e4826af5ad46da8b86\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 770, \"y\": 108, \"z\": 4000, \"width\": 230, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_encounter.30-Day Readmission Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Readmission Rate\"}, \"Name\": \"fact_encounter.30-Day Readmission Rate\"}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C8304A'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"28D\"}}}, \"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'30-Day Readmission Rate'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1016,
+          "y": 108,
+          "z": 5000,
+          "width": 230,
+          "height": 110,
+          "config": "{\"name\": \"8ba468c6ebc64a799b17\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1016, \"y\": 108, \"z\": 5000, \"width\": 230, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_encounter.Any Readmission Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"Any Readmission Rate\"}, \"Name\": \"fact_encounter.Any Readmission Rate\"}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"28D\"}}}, \"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Any Readmission Rate'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 32,
+          "y": 236,
+          "z": 6000,
+          "width": 600,
+          "height": 452,
+          "config": "{\"name\": \"8926a690d3e541bbacf0\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 32, \"y\": 236, \"z\": 6000, \"width\": 600, \"height\": 452}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_encounter.los_days\"}], \"Y\": [{\"queryRef\": \"fact_encounter.Encounters\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"los_days\"}, \"Name\": \"fact_encounter.los_days\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"Encounters\"}, \"Name\": \"fact_encounter.Encounters\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"los_days\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": false, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#00779E'\"}}}}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"valueAxis\": [{\"properties\": {\"gridlineColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#CDD7D4'\"}}}}}}}], \"categoryAxis\": [{\"properties\": {\"axisType\": {\"expr\": {\"Literal\": {\"Value\": \"'Categorical'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Encounters by length of stay, days'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 648,
+          "y": 236,
+          "z": 7000,
+          "width": 600,
+          "height": 452,
+          "config": "{\"name\": \"7776f965a5e045df96eb\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 648, \"y\": 236, \"z\": 7000, \"width\": 600, \"height\": 452}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_encounter.discharge_group\"}], \"Y\": [{\"queryRef\": \"fact_encounter.30-Day Readmission Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"discharge_group\"}, \"Name\": \"fact_encounter.discharge_group\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Readmission Rate\"}, \"Name\": \"fact_encounter.30-Day Readmission Rate\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Readmission Rate\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": false, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C8304A'\"}}}}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#485C59'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"gridlineColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#CDD7D4'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'30-day readmission rate by discharge destination'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection2",
+      "displayName": "Age",
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "ordinal": 1,
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#EEF1EF'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"outspace\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#EEF1EF'\"}}}}}}}]}}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 32,
+          "y": 20,
+          "z": 0,
+          "width": 900,
+          "height": 74,
+          "config": "{\"name\": \"01dc343a56fb4d3792cf\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 32, \"y\": 20, \"z\": 0, \"width\": 900, \"height\": 74}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"Older patients stay longer and return slightly more often\", \"textStyle\": {\"fontFamily\": \"Segoe UI Semibold\", \"fontSize\": \"22pt\", \"color\": \"#142826\"}}]}, {\"textRuns\": [{\"value\": \"Length of stay rises steadily with age; the 30-day rate climbs from 9.8% at 50-60 to 12.6% at 80-90.\", \"textStyle\": {\"fontFamily\": \"Segoe UI\", \"fontSize\": \"11pt\", \"color\": \"#485C59\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 32,
+          "y": 108,
+          "z": 1000,
+          "width": 600,
+          "height": 290,
+          "config": "{\"name\": \"a76ce731c6554281818e\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 32, \"y\": 108, \"z\": 1000, \"width\": 600, \"height\": 290}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_encounter.age_band\"}], \"Y\": [{\"queryRef\": \"fact_encounter.30-Day Readmission Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"age_band\"}, \"Name\": \"fact_encounter.age_band\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Readmission Rate\"}, \"Name\": \"fact_encounter.30-Day Readmission Rate\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"age_band\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": false, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C8304A'\"}}}}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#485C59'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"gridlineColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#CDD7D4'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'30-day readmission rate by age'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 648,
+          "y": 108,
+          "z": 2000,
+          "width": 600,
+          "height": 290,
+          "config": "{\"name\": \"fa0b0a175a954575b005\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 648, \"y\": 108, \"z\": 2000, \"width\": 600, \"height\": 290}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_encounter.age_band\"}], \"Y\": [{\"queryRef\": \"fact_encounter.Avg Length of Stay\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"age_band\"}, \"Name\": \"fact_encounter.age_band\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"Avg Length of Stay\"}, \"Name\": \"fact_encounter.Avg Length of Stay\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"age_band\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": false, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#00779E'\"}}}}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#485C59'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"gridlineColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#CDD7D4'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Average length of stay by age, days'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 32,
+          "y": 414,
+          "z": 3000,
+          "width": 1216,
+          "height": 274,
+          "config": "{\"name\": \"db06560e829e4f1c91a9\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 32, \"y\": 414, \"z\": 3000, \"width\": 1216, \"height\": 274}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_encounter.age_band\"}], \"Y\": [{\"queryRef\": \"fact_encounter.30-Day Readmission Rate\"}, {\"queryRef\": \"fact_encounter.Readmission Rate >30\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"age_band\"}, \"Name\": \"fact_encounter.age_band\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Readmission Rate\"}, \"Name\": \"fact_encounter.30-Day Readmission Rate\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"Readmission Rate >30\"}, \"Name\": \"fact_encounter.Readmission Rate >30\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"age_band\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": false, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C8304A'\"}}}}}}, \"selector\": {\"metadata\": \"fact_encounter.30-Day Readmission Rate\"}}, {\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#00779E'\"}}}}}}, \"selector\": {\"metadata\": \"fact_encounter.Readmission Rate >30\"}}], \"legend\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"position\": {\"expr\": {\"Literal\": {\"Value\": \"'Top'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Readmission within and after 30 days, by age'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection3",
+      "displayName": "Diagnosis",
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "ordinal": 2,
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#EEF1EF'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"outspace\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#EEF1EF'\"}}}}}}}]}}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 32,
+          "y": 20,
+          "z": 0,
+          "width": 900,
+          "height": 74,
+          "config": "{\"name\": \"f4d8e62d3d0846dc9a38\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 32, \"y\": 20, \"z\": 0, \"width\": 900, \"height\": 74}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"Diabetes as the primary diagnosis carries the highest risk\", \"textStyle\": {\"fontFamily\": \"Segoe UI Semibold\", \"fontSize\": \"22pt\", \"color\": \"#142826\"}}]}, {\"textRuns\": [{\"value\": \"Primary ICD-9 diagnosis grouped as in Strack et al. (2014). Groups and matrix cells under 200 eligible encounters are left out.\", \"textStyle\": {\"fontFamily\": \"Segoe UI\", \"fontSize\": \"11pt\", \"color\": \"#485C59\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 32,
+          "y": 108,
+          "z": 1000,
+          "width": 470,
+          "height": 580,
+          "config": "{\"name\": \"770d6fbcef234557a776\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 32, \"y\": 108, \"z\": 1000, \"width\": 470, \"height\": 580}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_encounter.primary_diag_group\"}], \"Y\": [{\"queryRef\": \"fact_encounter.30-Day Rate (n>=200)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"primary_diag_group\"}, \"Name\": \"fact_encounter.primary_diag_group\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Rate (n>=200)\"}, \"Name\": \"fact_encounter.30-Day Rate (n>=200)\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Rate (n>=200)\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": false, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C8304A'\"}}}}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#485C59'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"gridlineColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#CDD7D4'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'30-day readmission rate by primary diagnosis'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 518,
+          "y": 108,
+          "z": 2000,
+          "width": 730,
+          "height": 340,
+          "config": "{\"name\": \"00629214116b4fb78b25\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 518, \"y\": 108, \"z\": 2000, \"width\": 730, \"height\": 340}}], \"singleVisual\": {\"visualType\": \"pivotTable\", \"projections\": {\"Rows\": [{\"queryRef\": \"fact_encounter.primary_diag_group\"}], \"Columns\": [{\"queryRef\": \"fact_encounter.age_band\"}], \"Values\": [{\"queryRef\": \"fact_encounter.30-Day Rate (n>=200)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"primary_diag_group\"}, \"Name\": \"fact_encounter.primary_diag_group\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"age_band\"}, \"Name\": \"fact_encounter.age_band\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Rate (n>=200)\"}, \"Name\": \"fact_encounter.30-Day Rate (n>=200)\"}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"values\": [{\"properties\": {\"backColor\": {\"solid\": {\"color\": {\"expr\": {\"FillRule\": {\"Input\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"fact_encounter\"}}, \"Property\": \"30-Day Rate (n>=200)\"}}, \"FillRule\": {\"linearGradient2\": {\"min\": {\"color\": {\"Literal\": {\"Value\": \"'#EEF1EF'\"}}}, \"max\": {\"color\": {\"Literal\": {\"Value\": \"'#C8304A'\"}}}, \"nullColoringStrategy\": {\"strategy\": {\"Literal\": {\"Value\": \"'noColor'\"}}}}}}}}}}}, \"selector\": {\"data\": [{\"dataViewWildcard\": {\"matchingOption\": 1}}], \"metadata\": \"fact_encounter.30-Day Rate (n>=200)\"}}], \"grid\": [{\"properties\": {\"gridHorizontal\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"gridVertical\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'30-day readmission rate, diagnosis by age'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 518,
+          "y": 464,
+          "z": 3000,
+          "width": 730,
+          "height": 224,
+          "config": "{\"name\": \"7904bdad231e46ec90a6\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 518, \"y\": 464, \"z\": 3000, \"width\": 730, \"height\": 224}}], \"singleVisual\": {\"visualType\": \"scatterChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_encounter.primary_diag_group\"}], \"X\": [{\"queryRef\": \"fact_encounter.Avg Length of Stay\"}], \"Y\": [{\"queryRef\": \"fact_encounter.30-Day Rate (n>=200)\"}], \"Size\": [{\"queryRef\": \"fact_encounter.Encounters\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"primary_diag_group\"}, \"Name\": \"fact_encounter.primary_diag_group\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"Avg Length of Stay\"}, \"Name\": \"fact_encounter.Avg Length of Stay\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Rate (n>=200)\"}, \"Name\": \"fact_encounter.30-Day Rate (n>=200)\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"Encounters\"}, \"Name\": \"fact_encounter.Encounters\"}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": true, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#00779E'\"}}}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Length of stay vs 30-day rate (bubble size = encounters)'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection4",
+      "displayName": "Risk drivers",
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "ordinal": 3,
+      "config": "{\"objects\": {\"background\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#EEF1EF'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"outspace\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#EEF1EF'\"}}}}}}}]}}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 32,
+          "y": 20,
+          "z": 0,
+          "width": 900,
+          "height": 74,
+          "config": "{\"name\": \"89de34863c194353b0ef\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 32, \"y\": 20, \"z\": 0, \"width\": 900, \"height\": 74}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"A patient's history predicts a return better than anything else\", \"textStyle\": {\"fontFamily\": \"Segoe UI Semibold\", \"fontSize\": \"22pt\", \"color\": \"#142826\"}}]}, {\"textRuns\": [{\"value\": \"Five or more inpatient stays in the prior year: 37.1% back within 30 days, 4.3x the rate with none.\", \"textStyle\": {\"fontFamily\": \"Segoe UI\", \"fontSize\": \"11pt\", \"color\": \"#485C59\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 32,
+          "y": 108,
+          "z": 1000,
+          "width": 600,
+          "height": 290,
+          "config": "{\"name\": \"7d165706b32f47daaa58\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 32, \"y\": 108, \"z\": 1000, \"width\": 600, \"height\": 290}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_encounter.prior_inpatient_band\"}], \"Y\": [{\"queryRef\": \"fact_encounter.30-Day Readmission Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"prior_inpatient_band\"}, \"Name\": \"fact_encounter.prior_inpatient_band\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Readmission Rate\"}, \"Name\": \"fact_encounter.30-Day Readmission Rate\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"prior_inpatient_band\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": false, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C8304A'\"}}}}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#485C59'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"gridlineColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#CDD7D4'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'30-day rate by inpatient stays in the prior year'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 648,
+          "y": 108,
+          "z": 2000,
+          "width": 600,
+          "height": 290,
+          "config": "{\"name\": \"dd25b995ef4349f98978\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 648, \"y\": 108, \"z\": 2000, \"width\": 600, \"height\": 290}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_encounter.los_days\"}], \"Y\": [{\"queryRef\": \"fact_encounter.30-Day Readmission Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"los_days\"}, \"Name\": \"fact_encounter.los_days\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Readmission Rate\"}, \"Name\": \"fact_encounter.30-Day Readmission Rate\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"los_days\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": false, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#00779E'\"}}}}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#485C59'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"gridlineColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#CDD7D4'\"}}}}}}}], \"categoryAxis\": [{\"properties\": {\"axisType\": {\"expr\": {\"Literal\": {\"Value\": \"'Categorical'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'30-day rate by length of stay, days'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 32,
+          "y": 414,
+          "z": 3000,
+          "width": 600,
+          "height": 274,
+          "config": "{\"name\": \"a203f70cdbad478fa0d2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 32, \"y\": 414, \"z\": 3000, \"width\": 600, \"height\": 274}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_encounter.a1c_result\"}], \"Y\": [{\"queryRef\": \"fact_encounter.30-Day Readmission Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"a1c_result\"}, \"Name\": \"fact_encounter.a1c_result\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Readmission Rate\"}, \"Name\": \"fact_encounter.30-Day Readmission Rate\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"30-Day Readmission Rate\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": false, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#00779E'\"}}}}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#485C59'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"gridlineColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#CDD7D4'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'30-day rate by HbA1c result'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 648,
+          "y": 414,
+          "z": 4000,
+          "width": 600,
+          "height": 274,
+          "config": "{\"name\": \"ca104412b4e24627b340\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 648, \"y\": 414, \"z\": 4000, \"width\": 600, \"height\": 274}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_medication.medication\"}], \"Y\": [{\"queryRef\": \"fact_encounter.Prescriptions\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"fact_medication\", \"Type\": 0}, {\"Name\": \"e\", \"Entity\": \"fact_encounter\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"medication\"}, \"Name\": \"fact_medication.medication\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"Prescriptions\"}, \"Name\": \"fact_encounter.Prescriptions\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"e\"}}, \"Property\": \"Prescriptions\"}}}]}, \"drillFilterOtherVisuals\": true, \"hasDefaultSort\": false, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#00779E'\"}}}}}}}], \"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#485C59'\"}}}}}}}], \"valueAxis\": [{\"properties\": {\"gridlineColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#CDD7D4'\"}}}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Most prescribed diabetes medications'\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142826'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontFamily\": {\"expr\": {\"Literal\": {\"Value\": \"'Segoe UI Semibold'\"}}}}}], \"background\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#F7F9F8'\"}}}}}, \"transparency\": {\"expr\": {\"Literal\": {\"Value\": \"0D\"}}}}}], \"border\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}], \"dropShadow\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    }
+  ]
+}

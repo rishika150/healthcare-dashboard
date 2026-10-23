@@ -1,0 +1,4 @@
+expression DataFolder = "C:\path\to\healthcare-dashboard\data\processed\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: bdb5d2ea-6b1f-4908-a8f5-d8c20ffed13a
+
+	annotation PBI_ResultType = Text

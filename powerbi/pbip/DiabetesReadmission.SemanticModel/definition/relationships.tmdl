@@ -1,0 +1,3 @@
+relationship 28c8048a-c813-489f-b46e-8f7a95613007
+	fromColumn: fact_medication.encounter_id
+	toColumn: fact_encounter.encounter_id

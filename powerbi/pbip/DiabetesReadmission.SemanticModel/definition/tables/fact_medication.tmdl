@@ -1,0 +1,32 @@
+table fact_medication
+	lineageTag: e23d3431-e065-4761-abd8-b02149172e06
+
+	column encounter_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 239bb388-a2a2-4c7d-8d8f-e1f9732b00a1
+		summarizeBy: none
+		sourceColumn: encounter_id
+
+	column medication
+		dataType: string
+		lineageTag: 3bb11d40-8dfa-41e0-8364-fc8c750f167e
+		summarizeBy: none
+		sourceColumn: medication
+
+	column dosage_change
+		dataType: string
+		lineageTag: e6c216c3-210a-4aa6-a572-69bc11678f73
+		summarizeBy: none
+		sourceColumn: dosage_change
+
+	partition fact_medication = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_medication.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"encounter_id", Int64.Type}, {"medication", type text}, {"dosage_change", type text}})
+				in
+				    Typed
+

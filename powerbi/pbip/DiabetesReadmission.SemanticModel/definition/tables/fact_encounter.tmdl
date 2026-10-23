@@ -1,0 +1,345 @@
+table fact_encounter
+	lineageTag: 1070f709-0e4a-489b-b331-e6209c9883b0
+
+	measure Encounters = COUNTROWS ( fact_encounter )
+		formatString: #,0
+		lineageTag: 7505ec66-7a41-41f1-8ed2-9f24308389d9
+
+	measure Patients = DISTINCTCOUNT ( fact_encounter[patient_nbr] )
+		formatString: #,0
+		lineageTag: 5d879f3b-8645-4c8e-997e-35418d218f5c
+
+	measure 'Eligible Encounters' = CALCULATE ( COUNTROWS ( fact_encounter ), fact_encounter[is_eligible] = 1 )
+		formatString: #,0
+		lineageTag: 4c0a6abb-24b5-4864-8d93-800aa3f86bee
+
+	measure 'Readmitted <30' = CALCULATE ( SUM ( fact_encounter[readmit_lt30] ), fact_encounter[is_eligible] = 1 )
+		formatString: #,0
+		lineageTag: 13c1de89-b2b8-456e-85f7-17caa2ec907f
+
+	measure '30-Day Readmission Rate' = DIVIDE ( [Readmitted <30], [Eligible Encounters] )
+		formatString: 0.0%
+		lineageTag: 692e2ded-1779-457e-b296-bb38b875f541
+
+	measure 'Readmission Rate >30' = DIVIDE ( CALCULATE ( SUM ( fact_encounter[readmit_gt30] ), fact_encounter[is_eligible] = 1 ), [Eligible Encounters] )
+		formatString: 0.0%
+		lineageTag: 22eed20e-326b-4485-aa76-9e858b304474
+
+	measure 'Any Readmission Rate' = DIVIDE ( CALCULATE ( SUM ( fact_encounter[readmit_any] ), fact_encounter[is_eligible] = 1 ), [Eligible Encounters] )
+		formatString: 0.0%
+		lineageTag: d95a0c88-5035-41c8-8951-4c39847a1fe7
+
+	measure 'Avg Length of Stay' = AVERAGE ( fact_encounter[los_days] )
+		formatString: 0.0
+		lineageTag: 14ad7501-bf45-4cd3-943b-7dd4f46eb60a
+
+	measure 'Median Length of Stay' = MEDIAN ( fact_encounter[los_days] )
+		formatString: 0.0
+		lineageTag: b45f2d5c-a813-4059-b077-a049d59603c4
+
+	measure '30-Day Rate (All Patients)' = CALCULATE ( [30-Day Readmission Rate], REMOVEFILTERS ( fact_encounter ) )
+		formatString: 0.0%
+		lineageTag: 5be06d8c-ca38-4a6c-9401-d8d884d3a2ab
+
+	measure '30-Day Rate vs Average' = [30-Day Readmission Rate] - [30-Day Rate (All Patients)]
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: c5769087-60da-4e22-b57e-f653df538527
+
+	measure '30-Day Rate (n>=200)' = IF ( [Eligible Encounters] >= 200, [30-Day Readmission Rate] )
+		formatString: 0.0%
+		lineageTag: 0e2049ab-e7fd-46ed-8752-3fa0208eb9df
+
+	measure Prescriptions = COUNTROWS ( fact_medication )
+		formatString: #,0
+		lineageTag: 5e542d43-3853-4875-b0c1-4f6066691270
+
+	measure 'HbA1c Tested Share' = DIVIDE ( CALCULATE ( [Encounters], fact_encounter[a1c_result] <> "Not measured" ), [Encounters] )
+		formatString: 0.0%
+		lineageTag: 36968584-4faa-40b3-adb4-76c4a3e82428
+
+	column encounter_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c5c4cebe-e234-4a10-98a4-23b67234e4ca
+		summarizeBy: none
+		sourceColumn: encounter_id
+
+	column patient_nbr
+		dataType: int64
+		formatString: 0
+		lineageTag: 9fba30b1-ca0f-473a-8b6a-e08aecd90963
+		summarizeBy: none
+		sourceColumn: patient_nbr
+
+	column race
+		dataType: string
+		lineageTag: 55ed3237-9583-4d26-b507-a7f88c08ab25
+		summarizeBy: none
+		sourceColumn: race
+
+	column gender
+		dataType: string
+		lineageTag: d12fb000-8a9a-4dee-b597-546ebd5d15d4
+		summarizeBy: none
+		sourceColumn: gender
+
+	column age_band
+		dataType: string
+		lineageTag: 7135d6c7-ca17-4ac1-9c9b-7e4da6de7d43
+		summarizeBy: none
+		sourceColumn: age_band
+		sortByColumn: age_order
+
+	column age_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 8bcb712e-5b9a-4a9c-b562-ec20c683994f
+		summarizeBy: none
+		sourceColumn: age_order
+		isHidden
+
+	column admission_type_id
+		dataType: int64
+		formatString: 0
+		lineageTag: fd408e69-2514-472a-a9f0-6d0dbfa80fd0
+		summarizeBy: none
+		sourceColumn: admission_type_id
+		isHidden
+
+	column admission_type
+		dataType: string
+		lineageTag: 561b4826-5f3b-48a9-8c22-a1227ca8eae3
+		summarizeBy: none
+		sourceColumn: admission_type
+
+	column admission_type_group
+		dataType: string
+		lineageTag: e1b0ddec-d253-4dd1-9160-3a65c4b54d2a
+		summarizeBy: none
+		sourceColumn: admission_type_group
+
+	column discharge_disposition_id
+		dataType: int64
+		formatString: 0
+		lineageTag: be4e6f7a-d866-4e9d-b4c1-f90d372169b2
+		summarizeBy: none
+		sourceColumn: discharge_disposition_id
+		isHidden
+
+	column discharge_disposition
+		dataType: string
+		lineageTag: 1e7db19b-1656-48c1-a541-dc32159bb1fb
+		summarizeBy: none
+		sourceColumn: discharge_disposition
+
+	column discharge_group
+		dataType: string
+		lineageTag: 4d215965-edf5-49aa-b8b4-6cd27b9ef07a
+		summarizeBy: none
+		sourceColumn: discharge_group
+
+	column admission_source_id
+		dataType: int64
+		formatString: 0
+		lineageTag: abca8c8d-1801-447a-bb86-6048a6440221
+		summarizeBy: none
+		sourceColumn: admission_source_id
+		isHidden
+
+	column admission_source
+		dataType: string
+		lineageTag: ed3f169d-7145-45ba-895f-b92050890765
+		summarizeBy: none
+		sourceColumn: admission_source
+
+	column admission_source_group
+		dataType: string
+		lineageTag: adc98129-0c1e-468d-828f-3fb0f3b3a254
+		summarizeBy: none
+		sourceColumn: admission_source_group
+
+	column los_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a4bbdb6-0d0f-4ae2-8af5-2b71e87397bf
+		summarizeBy: none
+		sourceColumn: los_days
+
+	column payer_code
+		dataType: string
+		lineageTag: 21657ae6-0142-4acc-b002-c788adb2bbcb
+		summarizeBy: none
+		sourceColumn: payer_code
+
+	column medical_specialty
+		dataType: string
+		lineageTag: 4996463e-9d75-43fa-80fe-10b1aa8f1593
+		summarizeBy: none
+		sourceColumn: medical_specialty
+
+	column num_lab_procedures
+		dataType: int64
+		formatString: 0
+		lineageTag: 25692f8e-ab41-4b75-99b2-e5ea4392d80a
+		summarizeBy: none
+		sourceColumn: num_lab_procedures
+
+	column num_procedures
+		dataType: int64
+		formatString: 0
+		lineageTag: fc7fe9f7-a73b-4a48-9295-4784d960d82a
+		summarizeBy: none
+		sourceColumn: num_procedures
+
+	column num_medications
+		dataType: int64
+		formatString: 0
+		lineageTag: 77e43965-7cb9-41da-b6c9-11315f4df96c
+		summarizeBy: none
+		sourceColumn: num_medications
+
+	column number_outpatient
+		dataType: int64
+		formatString: 0
+		lineageTag: d9761d92-adcc-4115-93de-59d73845990d
+		summarizeBy: none
+		sourceColumn: number_outpatient
+
+	column number_emergency
+		dataType: int64
+		formatString: 0
+		lineageTag: 65625ba6-e0ca-492a-9028-11673aac69c3
+		summarizeBy: none
+		sourceColumn: number_emergency
+
+	column number_inpatient
+		dataType: int64
+		formatString: 0
+		lineageTag: 629b8958-b918-4f93-bb36-d5c5310c2c14
+		summarizeBy: none
+		sourceColumn: number_inpatient
+
+	column prior_inpatient_band
+		dataType: string
+		lineageTag: f46b3482-9bc7-42cd-8550-6730ac8ecef1
+		summarizeBy: none
+		sourceColumn: prior_inpatient_band
+
+	column diag_1
+		dataType: string
+		lineageTag: 568e3f43-314c-4080-8354-cbc54dd94325
+		summarizeBy: none
+		sourceColumn: diag_1
+		isHidden
+
+	column diag_2
+		dataType: string
+		lineageTag: 7209ad1c-0b76-4ecb-968a-2c3caed3de7a
+		summarizeBy: none
+		sourceColumn: diag_2
+		isHidden
+
+	column diag_3
+		dataType: string
+		lineageTag: df64830b-c54a-45b8-949b-75ce57facea1
+		summarizeBy: none
+		sourceColumn: diag_3
+		isHidden
+
+	column primary_diag_group
+		dataType: string
+		lineageTag: ff64cf22-5eaa-4422-8061-5754e1f6b128
+		summarizeBy: none
+		sourceColumn: primary_diag_group
+
+	column number_diagnoses
+		dataType: int64
+		formatString: 0
+		lineageTag: a3c9a8c7-4054-4786-9e89-7325e3099305
+		summarizeBy: none
+		sourceColumn: number_diagnoses
+
+	column max_glu_serum
+		dataType: string
+		lineageTag: a1d048cf-eda9-4708-a7b7-5f897d4805fb
+		summarizeBy: none
+		sourceColumn: max_glu_serum
+
+	column a1c_result
+		dataType: string
+		lineageTag: 60175f2e-0f3b-4529-9c69-29f1744f607b
+		summarizeBy: none
+		sourceColumn: a1c_result
+
+	column insulin
+		dataType: string
+		lineageTag: 1b091819-9712-49a0-affc-f3759e4d0d69
+		summarizeBy: none
+		sourceColumn: insulin
+
+	column med_changed
+		dataType: int64
+		formatString: 0
+		lineageTag: 809f0a51-149b-47f5-ba7a-45b8158a367f
+		summarizeBy: none
+		sourceColumn: med_changed
+
+	column on_diabetes_med
+		dataType: int64
+		formatString: 0
+		lineageTag: a613ba7e-84a0-4292-a0b2-409df634519c
+		summarizeBy: none
+		sourceColumn: on_diabetes_med
+
+	column readmitted_raw
+		dataType: string
+		lineageTag: 115519ae-312e-49cb-9842-72c563a32fbc
+		summarizeBy: none
+		sourceColumn: readmitted_raw
+		isHidden
+
+	column readmit_lt30
+		dataType: int64
+		formatString: 0
+		lineageTag: 36d029b4-8b94-419d-8ac5-0f1f3d3c6d4c
+		summarizeBy: none
+		sourceColumn: readmit_lt30
+
+	column readmit_gt30
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e0c5fcb-54a7-45ee-b144-ac1a004a906f
+		summarizeBy: none
+		sourceColumn: readmit_gt30
+
+	column readmit_any
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ae8917b-40ad-49b0-9930-0e215ced5ed9
+		summarizeBy: none
+		sourceColumn: readmit_any
+
+	column is_eligible
+		dataType: int64
+		formatString: 0
+		lineageTag: b498347b-3647-4dd1-ba98-d8a2d1d88fe1
+		summarizeBy: none
+		sourceColumn: is_eligible
+
+	column is_first_encounter
+		dataType: int64
+		formatString: 0
+		lineageTag: c27e966a-b8ce-4c9a-a63e-90ac8df2ea82
+		summarizeBy: none
+		sourceColumn: is_first_encounter
+
+	partition fact_encounter = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_encounter.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"encounter_id", Int64.Type}, {"patient_nbr", Int64.Type}, {"race", type text}, {"gender", type text}, {"age_band", type text}, {"age_order", Int64.Type}, {"admission_type_id", Int64.Type}, {"admission_type", type text}, {"admission_type_group", type text}, {"discharge_disposition_id", Int64.Type}, {"discharge_disposition", type text}, {"discharge_group", type text}, {"admission_source_id", Int64.Type}, {"admission_source", type text}, {"admission_source_group", type text}, {"los_days", Int64.Type}, {"payer_code", type text}, {"medical_specialty", type text}, {"num_lab_procedures", Int64.Type}, {"num_procedures", Int64.Type}, {"num_medications", Int64.Type}, {"number_outpatient", Int64.Type}, {"number_emergency", Int64.Type}, {"number_inpatient", Int64.Type}, {"prior_inpatient_band", type text}, {"diag_1", type text}, {"diag_2", type text}, {"diag_3", type text}, {"primary_diag_group", type text}, {"number_diagnoses", Int64.Type}, {"max_glu_serum", type text}, {"a1c_result", type text}, {"insulin", type text}, {"med_changed", Int64.Type}, {"on_diabetes_med", Int64.Type}, {"readmitted_raw", type text}, {"readmit_lt30", Int64.Type}, {"readmit_gt30", Int64.Type}, {"readmit_any", Int64.Type}, {"is_eligible", Int64.Type}, {"is_first_encounter", Int64.Type}})
+				in
+				    Typed
+

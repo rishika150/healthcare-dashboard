@@ -1,6 +1,6 @@
 # Building the Power BI report
 
-Power BI Desktop is free on Windows ([Microsoft Store](https://aka.ms/pbidesktopstore)). This guide rebuilds the report from the files in this folder in about 30 minutes. Save the result as `powerbi/diabetes_readmission.pbix` and add your screenshots to `screenshots/powerbi-*.png`.
+The finished report is the Power BI Project in [`pbip/`](pbip/), generated with `python powerbi/build_pbip.py` (see the main README). This guide documents the model and pages, and shows how to rebuild them by hand in Power BI Desktop, which is free on Windows ([Microsoft Store](https://aka.ms/pbidesktopstore)).
 
 ## 1. Load the data
 
