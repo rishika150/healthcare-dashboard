@@ -2,7 +2,7 @@
 
 An end-to-end healthcare analytics project on **101,766 hospital encounters for diabetic patients across 130 US hospitals (1999–2008)**. The raw data is loaded into **MySQL**, cleaned and validated in **SQL**, cross-checked in **pandas**, and reported in a **Power BI** model and a public **web dashboard** that GitHub Actions rebuilds and deploys to GitHub Pages on every push. Everything runs on free tools.
 
-**Live dashboard:** https://kritika89898.github.io/diabetes-readmission-dashboard/
+**Live dashboard:** https://rishika150.github.io/healthcare-dashboard/
 
 ![Dashboard hero: length-of-stay distribution and the 30-day readmission window](screenshots/hero.png)
 
